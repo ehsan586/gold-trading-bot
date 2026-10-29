@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-vazir), "Vazirmatn", system-ui, sans-serif;
+  --color-bg: #07090f;
+  --color-panel: #0d1119;
+  --color-panel2: #111623;
+  --color-line: rgba(255, 255, 255, 0.07);
+  --color-gold: #f7b32b;
+  --color-gold2: #ffd772;
+  --color-good: #34d399;
+  --color-bad: #f87171;
+  --color-muted: #8a93a6;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #07090f;
+  color: #e8ecf3;
+  min-height: 100vh;
+}
+
+body {
+  background-image:
+    radial-gradient(1100px 500px at 85% -10%, rgba(247, 179, 43, 0.09), transparent 60%),
+    radial-gradient(900px 480px at 8% 0%, rgba(90, 130, 255, 0.07), transparent 60%),
+    radial-gradient(700px 500px at 50% 120%, rgba(52, 211, 153, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 0;
+}
+
+.gold-text {
+  background: linear-gradient(120deg, #ffe3a3, #f7b32b 45%, #c98a12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  line-height: 1;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+}
+
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0.01em;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+.pulse-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes ticker-glow {
+  0%, 100% { text-shadow: 0 0 18px rgba(247, 179, 43, 0.35); }
+  50% { text-shadow: 0 0 4px rgba(247, 179, 43, 0.1); }
+}
+.ticker-glow {
+  animation: ticker-glow 2.4s ease-in-out infinite;
+}
+
+.flash-up {
+  animation: flashUp 0.7s ease-out;
+}
+.flash-down {
+  animation: flashDown 0.7s ease-out;
+}
+@keyframes flashUp {
+  0% { background-color: rgba(52, 211, 153, 0.22); }
+  100% { background-color: transparent; }
+}
+@keyframes flashDown {
+  0% { background-color: rgba(248, 113, 113, 0.22); }
+  100% { background-color: transparent; }
+}
+
+.feed-scroll {
+  scrollbar-gutter: stable;
+}
+
+.ltr {
+  direction: ltr;
+  unicode-bidi: embed;
+}
